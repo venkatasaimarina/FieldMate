@@ -1,0 +1,265 @@
+
+<head>
+  <title>
+    yeild Recommendation
+  </title>
+  <link rel="shortcut icon" href="https://tse4.mm.bing.net/th?id=OIP.OprASdRpVI7r5mq_xX_d6wAAAA&pid=Api&P=0&h=180"/>
+
+</head>
+<style>
+  html body {
+    background-image: url('https://eu-images.contentstack.com/v3/assets/bltdd43779342bd9107/blt7ce917f0e3918c50/638f2d3069b13001e4b459c6/corn-harvest-583629188.jpg');
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  *{
+    padding: 3px;
+  }
+</style>
+<!--Form Section-->
+<br /><br />
+<h2 style="text-align: center; margin: 0px; font-size:40px ; color: black">
+  <b>I will tell you how much yield is produced across various districts</b>
+</h2>
+<br />
+
+<div
+  style="
+    width: 350px;
+    height: 40rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-style:normal;
+  "
+>
+  <form method="POST" action='/predict-yield'>
+    <!-- <div class="form-group">
+      <label for="ph" style="font-size: 17px"><b>ph level</b></label>
+      <input
+        type="text"
+        class="form-control"
+        id="ph"
+        name="ph"
+        placeholder="Enter the value"
+        style="font-weight: bold"
+        required
+      />
+    </div> -->
+    <div class="form-group">
+      <label for="state" style="font-size: 17px"
+        ><b>State</b></label
+      >
+      <select
+        name="statename"
+        class="form-control"
+        id="state"
+        style="font-weight: bold"
+        required
+      >
+        <option selected>select</option>
+        <option>Andhra Pradesh</option>
+        <!-- <option>maize</option>
+        <option>chickpea</option>
+        <option>kidneybeans</option>
+        <option>pigeonpeas</option>
+        <option>mothbeans</option>
+        <option>mungbean</option>
+        <option>blackgram</option>
+        <option>lentil</option>
+        <option>pomegranate</option>
+        <option>banana</option>
+        <option>mango</option>
+        <option>grapes</option>
+        <option>watermelon</option>
+        <option>muskmelon</option>
+        <option>apple</option>
+        <option>orange</option>
+        <option>papaya</option>
+        <option>coconut</option>
+        <option>cotton</option>
+        <option>jute</option>
+        <option>coffee</option> -->
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="Districts" style="font-size: 17px"><b>Districts</b></label>
+      <select
+        name="District_name"
+        class="form-control"
+        id="District"
+        style="font-weight: bold"
+        required
+      >
+        <option selected>select</option>
+        <option>SRIKAKULAM</option>
+        <!-- <option>Parvathipuram Manyam</option> -->
+        <option>VIZIANAGARAM	</option>
+        <option>VISAKHAPATANAM</option>
+        <option>KRISHNA</option>
+        <option>KADAPA</option>
+        <!-- <option>Alluri Sitharama Raju</option> -->
+        <!-- <option>Anakapalli</option>
+        <option>Kakinada</option> -->
+        <option>EAST GODAVARI	</option>
+        <!-- <option>Dr.B.R.Ambedkar Konaseema</option>
+        <option>Eluru</option> -->
+        <option>WEST GODAVARI</option>
+        <!-- <option>NTR</option>
+        <option>Palnadu</option> -->
+        <option>GUNTUR</option>
+        <!-- <option>Bapatla</option> -->
+        <option>PRAKASAM</option>
+        <option>SPSR NELLORE</option> 
+        <option>KURNOOL</option>
+        <!-- <option>Nandyal</option> -->
+        <option>ANANTAPUR</option>
+        <!-- <option>Sri Sathya Sai</option>
+        <option>YSR</option>
+        <option>Annamayya</option>
+        <option>Tirupati</option> -->
+        <option>CHITTOOR</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="crop_year" style="font-size: 17px"><b>crop_year</b></label>
+      <select
+        name="crop_year"
+        class="form-control"
+        id="crop_year"
+        style="font-weight: bold"
+        required
+      >
+        <!-- Add options for years 2000 to 2023 -->
+        <option value="">Select year</option>
+        <!-- Use a loop to generate options for each year -->
+        <!-- Here's an example using JavaScript to generate options -->
+        <script>
+          var selectElement = document.getElementById('crop_year');
+          for (var year = 2000; year <= 2023; year++) {
+            var option = document.createElement('option');
+            option.value = year;
+            option.text = year;
+            selectElement.appendChild(option);
+          }
+        </script>
+      </select>
+    </div>
+    
+
+
+    <div class="form-group">
+      <label for="soil-type" style="font-size: 17px"><b>Seasons</b></label>
+      <select name="season" id="season" class="form-control" style="font-weight: bold;">
+        <option value="" disabled selected>Select season</option>
+        <option value="1">Kharif</option>
+        <option value="2">Rabi</option>
+        <option value="3">Autumn</option>
+        <option value="4">Whole Year</option>
+      </select>
+    </div>
+    
+
+
+    <div class="form-group">
+      <label for="crop" style="font-size: 17px"><b>Crop</b></label>
+      <select name="crop" id="crop" class="form-control" style="font-weight: bold;">
+        <option value="" disabled selected>Select crop</option>
+        <option value="1">Bajra</option>
+        <option value="2">Dry chillies</option>
+        <option value="3">Oil seeds</option>
+        <option value="4">Horse-gram</option>
+        <option value="5">Moong</option>
+        <option value="6">Ragi</option>
+        <option value="7">Sunflower</option>
+        <option value="8">Tobacco</option>
+        <option value="9">Jowar</option>
+        <option value="10">Arhar/Tur</option>
+        <option value="11">Wheat</option>
+        <option value="12">Sesamum</option>
+        <option value="13">Onion</option>
+        <option value="14">Linseed</option>
+        <option value="15">Korra</option>
+        <option value="16">Coriander</option>
+        <option value="17">Sweet potato</option>
+        <option value="18">Banana</option>
+        <option value="19">Castor seeds</option>
+        <option value="20">Cow pea</option>
+        <option value="21">Brinjal</option>
+        <option value="22">Cabbage</option>
+        <option value="23">Cashew nut</option>
+        <option value="24">Sapota</option>
+        <option value="25">Samai</option>
+        <option value="26">Small millets</option>
+        <option value="27">Cucumber</option>
+        <option value="28">Beans</option>
+        <option value="29">Soybean</option>
+        <option value="30">Potato</option>
+        <option value="31">Maize</option>
+        <option value="32">Chickpea</option>
+        <option value="33">Kidney beans</option>
+        <option value="34">Black gram</option>
+        <option value="35">Lentil</option>
+        <option value="36">Pomegranate</option>
+        <option value="37">Banana</option>
+        <option value="38">Mango</option>
+        <option value="39">Watermelon</option>
+        <option value="40">Grapes</option>
+        <option value="41">Apple</option>
+        <option value="42">Orange</option>
+        <option value="43">Papaya</option>
+        <option value="44">Coconut</option>
+        <option value="45">Cotton</option>
+        <option value="46">Jute</option>
+        <option value="47">Coffee</option>
+      </select>
+    </div>
+    
+
+    <div class="form-group">
+      <label for="area" style="font-size: 17px"><b>Area</b></label>
+      <!-- <select
+        name="crop_eyear"
+        class="form-control"
+        id="crop_year"
+        style="font-weight: bold"
+        required
+      > -->
+      <input
+          type="text"
+          inputmode="numeric"
+          class="form-control"
+          id="Areae"
+          name="Area"
+          placeholder="Enter area"
+          style="font-weight: bold"
+          required
+    />
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-info"
+        style="
+          color: black;
+          font-weight: bold;
+          width: 80px;
+          height: 30px;
+          border-radius: 10px;
+          font-size: 15px;
+        "
+      >
+        Predict
+      </button>
+    </div>
+  </form>
+</div>

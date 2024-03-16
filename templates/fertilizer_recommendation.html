@@ -1,0 +1,175 @@
+<head>
+  <title>
+    Fertilizer Recommendation
+  </title>
+  <link rel="shortcut icon" href="https://tse4.mm.bing.net/th?id=OIP.OprASdRpVI7r5mq_xX_d6wAAAA&pid=Api&P=0&h=180"/>
+
+</head>
+
+<style>
+  html body {
+    background-color: rgb(206, 206, 228);
+    padding: 10px;background-image: url('https://www.theoxygenproject.com/wp-content/uploads/2022/02/Safe-handling-of-agrochemicals-on-the-farm-2048x1365.jpg.webp');
+      background-repeat: no-repeat;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+  }
+  *{
+    padding: 3px;
+  }
+
+  </style>
+  <!--Form Section-->
+  <br /><br />
+  <h2 style="text-align: center; font-size: 40px; color: black">
+    <b >Predicting fertilizers based on soil</b>
+  </h2>
+  <br />
+
+  <div
+    style="
+      width: 350px;
+      height: 40rem;
+      margin: 0px auto;
+      color: maroon;
+      border-radius: 25px;
+      padding: 10px 10px;
+      font-weight: unset;
+      font-size: 20px;
+    "
+  >
+  <form action="{{ url_for('predictkidney')}}" method="post" class="form-inline">
+      <div class="form-group">
+        <label for="temp" style="font-size: 17px"><b>Temperature</b></label>
+        <input
+          type="text"
+          inputmode="numeric"
+          class="form-control"
+          id="Temperature"
+          name="ph"
+          placeholder="Enter the value"
+          style="font-weight: bold"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="Humidity" style="font-size: 17px"><b>Humidity</b></label>
+        <input
+          type="text"
+          inputmode="numeric"
+          class="form-control"
+          id="Humidity"
+          name="Humidity"
+          placeholder="Enter the value"
+          style="font-weight: bold"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="Moisture" style="font-size: 17px"><b>Moisture</b></label>
+        <input
+          type="text"
+          inputmode="numeric"
+          class="form-control"
+          id="Moisture"
+          name="Moisture"
+          placeholder="Enter the value"
+          style="font-weight: bold"
+          required
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="crop" style="font-size: 17px"><b>Crop</b></label>
+        <select name="crop" id="crop" class="form-control" style="font-weight: bold;">
+          <option value="" disabled selected>Select crop</option>
+          <option value="1">Maize</option>
+          <option value="2">Barley</option>
+          <option value="3">Oil seeds</option>
+          <option value="4">Paddy</option>
+          <option value="5">Millets</option>
+          <option value="6">Tobacco</option>
+          <option value="7">Ground nuts</option>
+          <option value="8">Pulses</option>
+          <option value="9">Wheat</option>
+          <option value="10">Sugarcane</option>
+          <option value="11">Cotton</option>
+        </select>
+      </div>
+      
+      
+      
+
+      <div class="form-group">
+        <label for="soil-type" style="font-size: 17px"><b>Soil Type</b></label>
+        <select name="soil" id="soil" class="form-control" style="font-weight: bold;">
+          <option value="" disabled selected>Select soil type</option>
+          <option value="1">Sandy</option>
+          <option value="2">Loamy</option>
+          <option value="3">Black</option>
+          <option value="4">Red</option>
+          <option value="5">Clayey</option>
+        </select>
+      </div>
+      
+      
+        
+    
+
+      <div class="form-group">
+        <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
+        <input
+          type="text"
+          inputmode="numeric"
+          class="form-control"
+          id="Nitrogen"
+          name="nitrogen"
+          placeholder="Enter the value "
+          style="font-weight: bold"
+          required
+        />
+      </div>
+
+    <div class="form-group">
+      <label for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
+      <input
+        type="text"
+        inputmode="numeric"
+        class="form-control"
+        id="Pottasium"
+        name="pottasium"
+        placeholder="Enter the value"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Phosphorous" style="font-size: 17px"
+        ><b>Phosphorous</b></label
+      >
+      <input
+        type="text"
+        inputmode="numeric"
+        class="form-control"
+        id="Phosphorous"
+        name="phosphorous"
+        placeholder="Enter the value "
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <center><button type="submit" class="button">Predict</button></center>
+      </button>
+
+      
+    </div>
+
+  </form>
+</div>

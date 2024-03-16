@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation Result</title>
+    <link rel="shortcut icon" href="https://tse4.mm.bing.net/th?id=OIP.OprASdRpVI7r5mq_xX_d6wAAAA&pid=Api&P=0&h=180"/>
+
+    <style>
+        body {
+            background-image: url('https://images.pexels.com/photos/55766/pexels-photo-55766.jpeg?cs=srgb&dl=pexels-pierre-sudre-55766.jpg&fm=jpg');
+            background-repeat: no-repeat;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h2 {
+            color: #4CAF50;
+        }
+
+        .result {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>The crop recommendation </h2>
+
+    <div class="result">
+        
+        <p>The recommended crop  is: {{ prediction }}</p>
+        <p>Thank you for using our prediction service!</p>
+    </div>
+</body>
+</html>
+
+
+
