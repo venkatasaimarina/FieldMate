@@ -206,6 +206,7 @@
   }
   
   img {
+    position: relative;
     vertical-align: middle;
     border-style: none;
   }
@@ -481,9 +482,11 @@
   }
   
   .img-fluid {
+    position: relative;
     max-width: 100%;
     height: auto;
-  }
+    top: 300px;
+
   
   .img-thumbnail {
     padding: 0.25rem;
@@ -5481,6 +5484,7 @@
     opacity: 0;
   }
   
+  
   .modal-backdrop.show {
     opacity: 0.5;
   }
@@ -8975,5 +8979,6 @@
     .table-bordered td {
       border: 1px solid #ddd !important;
     }
+  }
   }
   /*# sourceMappingURL=bootstrap.css.map */

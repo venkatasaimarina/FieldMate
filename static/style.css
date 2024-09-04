@@ -550,7 +550,8 @@ p.about-text {
 
 /*-- bg --*/
 .background-img {
-    background: url(../images/5.jpg) no-repeat center;
+    background: url(../images/5.jpg) no-repeat ;
+	background-repeat: no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -558,7 +559,7 @@ p.about-text {
     -moz-background-size: cover;
 }
 .overlay-clr {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(166, 37, 37, 0.5);
 }
 .bg-middle p {
     letter-spacing: 1px;
@@ -593,10 +594,10 @@ p.about-text {
 	position: relative;
 }
 .blog-info {
-    background: #fff;
+    background: #d9cece;
     padding: 30px;
     margin-top: -2em;
-    position: absolute;
+    position:absolute;
     left: 6%;
     right: 6%;
     top: 200px;
@@ -1474,7 +1475,7 @@ a.move-top {
 		line-height: 36px;
 	}
 	.blog-info {
-		top: 180px;
+		top: 300px;
 	}
 	.about-left h3 {
 		font-size: 22px;
@@ -1623,5 +1624,6 @@ a.move-top {
 @media(max-width:320px) {
 	
 }
+
 
 /*-- //Responsive design --*/

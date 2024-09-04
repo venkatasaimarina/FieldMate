@@ -244,7 +244,7 @@ def yield_prediction():
     if request.method == 'POST':
         State_Name = (request.form['statename'])
         District_Name = (request.form['District_name'])
-        Crop_Year = int(request.form['ph'])
+        Crop_Year = int(request.form['crop_year'])
         Season = int(request.form['season'])
         Crop = int(request.form['crop'])
         Area = float(request.form['Area'])
