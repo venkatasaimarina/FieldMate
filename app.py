@@ -68,11 +68,9 @@ disease_classes = ['Apple___Apple_scab',
                    'Tomato___Tomato_Yellow_Leaf_Curl_Virus',
                    'Tomato___Tomato_mosaic_virus',
                    'Tomato___healthy']
-
-disease_model_path = "models/plant_disease_model (2).pth"
+disease_model_path = "models\plant_disease_model (2).pth"
 disease_model = ResNet9(3, len(disease_classes))
-disease_model.load_state_dict(torch.load(
-    disease_model_path, map_location=torch.device('cpu')))
+disease_model.load_state_dict(torch.load(disease_model_path, map_location=torch.device('cpu'), weights_only=True))
 disease_model.eval()
 def predict_image(img, model=disease_model):
     """
@@ -260,3 +258,5 @@ def yield_prediction():
 
 
 
+if __name__ == "__main__":
+    app.run(debug=True)
